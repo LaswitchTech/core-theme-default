@@ -20,6 +20,11 @@ TOKEN
 *.cfg
 *.log
 
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log
+
 # Exclude Files
 !info.cfg
 !routes.cfg

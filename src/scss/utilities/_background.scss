@@ -1,0 +1,11 @@
+// src/scss/utilities/_background.scss
+@use "sass:map";
+@use "sass:math";
+@use "bootstrap/scss/bootstrap" as bs;
+
+// Transparent
+.bg-transparent  {
+    background-color: transparent !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+}

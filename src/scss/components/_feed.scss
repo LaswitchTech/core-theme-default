@@ -1,0 +1,68 @@
+// src/scss/components/_feed.scss
+@use "sass:map";
+@use "sass:math";
+@use "bootstrap/scss/bootstrap" as bs;
+
+.feed {
+    .post {
+        border-bottom-width: var(--bs-border-width);
+        border-bottom-style: var(--bs-border-style);
+        border-bottom-color: var(--bs-border-color);
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+
+        &:last-of-type {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .user-block {
+            margin-bottom: 15px;
+            width: 100%;
+
+            img {
+                float: left;
+                height: 65px;
+                width: 65px;
+            }
+
+            .username,
+            .description {
+                display: block;
+                margin-left: 75px;
+
+                &.username {
+                    font-size: 16px;
+                    margin-top: -1px;
+                }
+
+                &.description {
+                    font-size: 13px;
+                    margin-top: -3px;
+                }
+            }
+
+            &.user-block-sm {
+                img {
+                    width: 1.875rem;
+                    height: 1.875rem;
+                }
+
+                .username,
+                .description,
+                .comment {
+                    margin-left: 40px;
+
+                    &.username {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .row {
+            width: 100%;
+        }
+    }
+}
