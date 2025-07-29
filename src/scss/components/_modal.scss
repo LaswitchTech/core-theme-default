@@ -1,0 +1,36 @@
+// src/scss/components/_modal.scss
+@use "sass:map";
+@use "sass:math";
+@use "bootstrap/scss/bootstrap" as bs;
+
+// Modal
+.modal {
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+// Modal Colors
+@each $name, $color in bs.$theme-colors {
+    .modal-#{$name} {
+        .modal-dialog {
+            .modal-content {
+                .modal-header,
+                .modal-footer {
+                    background-color: $color;
+                    color: bs.color-contrast($color);
+
+                    h1, h2, h3, h4, h5,
+                    a, a:visited,
+                    button {
+                        color: bs.color-contrast($color);
+                    }
+                }
+            }
+        }
+    }
+}

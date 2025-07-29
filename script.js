@@ -76,6 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 calendar.render();
             })
 
+        // Enable Emphasized elements
+        document.querySelectorAll('[data-bs-toggle="emphasize"]')
+            .forEach(emphasizeNode => {
+                emphasizeNode.addEventListener('click', () => {
+                    const target = document.querySelector(emphasizeNode.getAttribute('data-bs-target'));
+                    if (target) {
+                        if (!target.classList.contains('emphasized')) {
+                            target.classList.toggle('emphasized');
+                            const overlay = document.createElement('div');
+                            overlay.className = 'emphasized-overlay';
+                            document.body.appendChild(overlay);
+                            target.addEventListener('click', () => {
+                                target.classList.remove('emphasized');
+                                overlay.remove();
+                            });
+                        }
+                    } else {
+                        console.warn(`Target element ${emphasizeNode.getAttribute('data-bs-target')} not found.`);
+                    }
+                });
+            });
+
         // Add an IDE Helpers
         function handleIndent(el, out = false) {
             const TAB = '\t';
