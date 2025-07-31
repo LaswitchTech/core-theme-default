@@ -11,21 +11,6 @@
     backdrop-filter: none !important;
 }
 
-// Functions
-@function textColor($bgColor) {
-	$red: red($bgColor);
-	$green: green($bgColor);
-	$blue: blue($bgColor);
-
-	$luminance: 0.2126 * math.div($red, 255) + 0.7152 * math.div($green, 255) + 0.0722 * math.div($blue, 255);
-
-	@if ($luminance > 0.7) {
-		@return $dark;
-	} @else {
-		@return $light;
-	}
-}
-
 // Background Colors
 @each $name, $color in map.get(bs.$theme-colors, "background") {
     .bg-#{$name} {
