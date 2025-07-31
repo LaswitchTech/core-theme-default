@@ -239,12 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Identify the textarea for the IDE
                 const ideEditorNode = ideNode.querySelector('textarea');
 
-                // parse static highlight pattern once
-                const highlightSet = parseHighlightAttr(ideNode.getAttribute('data-bs-highlight') || ideEditorNode.getAttribute('data-bs-highlight'));
-
                 // keep numbers in sync
                 const refresh = () => {
                     const lines = ideEditorNode.value.split('\n').length;
+                    const highlightSet = parseHighlightAttr(ideNode.getAttribute('data-bs-highlight') || ideEditorNode.getAttribute('data-bs-highlight'));
                     buildLineNumbers(ideLinesNode, lines);
                     markStaticHighlights(ideLinesNode, highlightSet);
                     markSelection(ideLinesNode, ideEditorNode);
