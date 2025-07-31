@@ -2,28 +2,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     (() => {
 
-        // Enable Theme toggling
-        document.querySelectorAll('[data-bs-theme-value]')
-            .forEach(themeToggle => {
-                themeToggle.addEventListener('click', () => {
-                    const theme = themeToggle.getAttribute('data-bs-theme-value');
-                    document.documentElement.setAttribute('data-bs-theme', theme);
-                    localStorage.setItem('theme', theme);
-                    document.querySelectorAll('[data-bs-theme-value]')
-                        .forEach(btn => {
-                            btn.classList.toggle('active', btn.getAttribute('data-bs-theme-value') === theme);
-                        });
-                });
-            });
-
-        // Set initial theme based on localStorage or default
-        const savedTheme = localStorage.getItem('theme') || 'auto';
-        document.documentElement.setAttribute('data-bs-theme', savedTheme);
-        document.querySelectorAll('[data-bs-theme-value]')
-            .forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-bs-theme-value') === savedTheme);
-            });
-
         // Enable Tooltips
         document.querySelectorAll('[data-bs-toggle="tooltip"]')
             .forEach(tooltip => {
