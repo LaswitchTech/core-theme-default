@@ -12,7 +12,7 @@
 }
 
 // Background Colors
-@each $name, $color in map.get(bs.$theme-colors, "background") {
+@each $name, $color in bs.$theme-colors {
     .bg-#{$name} {
         background-color: var(--bs-$name) !important;
     }
