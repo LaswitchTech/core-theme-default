@@ -2,6 +2,7 @@
 
 // Import Sass modules
 @use "sass:map";
+@use "sass:math";
 
 // Import colors
 @use "colors" as colors;
@@ -42,6 +43,7 @@
     $info: colors.$info,
     $warning: colors.$warning,
     $danger: colors.$danger,
+    $grays: colors.$grays,
     $theme-colors: colors.$theme-colors,
 
     // Variables
@@ -57,3 +59,17 @@
 
 // Import Forms
 @use "forms" as *;
+
+// Dark mode adjustments
+@include color-mode(dark) {
+
+    /* Theme colors (used by buttons, alerts, badges, utilities, etc.) */
+    @each $name, $value in colors.$theme-colors-dark {
+        --bs-#{$name}: #{$value};
+        --bs-#{$name}-rgb: #{to-rgb($value)};
+    }
+
+    /* Body background and text color */
+    --bs-body-bg: #{colors.$body-bg-dark};
+    --bs-body-color: #{colors.$body-color-dark};
+}

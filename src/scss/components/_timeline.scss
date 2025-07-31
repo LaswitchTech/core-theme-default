@@ -1,9 +1,10 @@
 // src/scss/components/_feed.scss
 @use "sass:map";
 @use "sass:math";
+@use "../colors" as colors;
 @use "bootstrap/scss/bootstrap" as bs;
 
-$padding: map.get(bs.$spacers, 2);
+$timeline-padding: map.get(bs.$spacers, 2);
 
 .timeline {
     margin: 0;
@@ -12,13 +13,13 @@ $padding: map.get(bs.$spacers, 2);
 
     &::before {
         border-radius: bs.$border-radius;
-        background-color: bs.$light;
-        bottom: $padding;
+        background-color: bs.$gray-100;
+        bottom: $timeline-padding;
         content: "";
-        left: ($padding * 4);
+        left: ($timeline-padding * 4);
         margin: 0;
         position: absolute;
-        top: $padding;
+        top: $timeline-padding;
         width: 4px;
     }
 
@@ -41,7 +42,7 @@ $padding: map.get(bs.$spacers, 2);
             position: relative;
 
             > * {
-                padding: $padding * 2;
+                padding: $timeline-padding * 2;
 
                 &.card {
                     border-width: 0;
@@ -52,13 +53,13 @@ $padding: map.get(bs.$spacers, 2);
                     position: relative;
                     display: flex;
                     justify-content: flex-end;
-                    padding: $padding;
+                    padding: $timeline-padding;
 
                     > * {
-                        padding-left: $padding;
-                        padding-right: $padding;
-                        padding-top: math.div($padding,2);
-                        padding-bottom: math.div($padding,2);
+                        padding-left: $timeline-padding;
+                        padding-right: $timeline-padding;
+                        padding-top: math.div($timeline-padding,2);
+                        padding-bottom: math.div($timeline-padding,2);
                         border-radius: bs.$border-radius;
                         font-size: (bs.$btn-font-size * 0.75);
                         line-height: (bs.$btn-line-height * 0.75);
@@ -87,5 +88,14 @@ $padding: map.get(bs.$spacers, 2);
         display: inline-block;
         font-weight: 600;
         padding: 5px;
+    }
+}
+
+// Dark mode adjustments
+@include bs.color-mode(dark) {
+    .timeline {
+        &::before {
+            background-color: colors.$gray-200-dark;
+        }
     }
 }
