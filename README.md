@@ -18,6 +18,24 @@ This software is distributed under the [GPLv3](LICENSE) license.
 ## Installation
 Open your application's extension manager, search for `Default` and press `Install`.
 
+### Development Installation
+To install this theme for development purposes, clone the repository into your application's `lib/themes` directory:
+```bash
+cd /path/to/your/application/lib/themes
+git clone [REPOSITORY_URL] [THEME_NAME]
+```
+
+Then install the dependencies using npm:
+```bash
+cd [THEME_NAME]
+npm install
+```
+
+Finally, build the theme using:
+```bash
+npm run build
+```
+
 ## Security
 Please disclose any vulnerabilities found responsibly – report security issues to the maintainers privately. See [SECURITY.md](SECURITY.md) for more information.
 
