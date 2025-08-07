@@ -50,6 +50,7 @@ $timeline-padding: map.get(bs.$spacers, 2);
                 }
 
                 &.tools {
+                    background-color: var(--bs-card-cap-bg);
                     position: relative;
                     display: flex;
                     justify-content: flex-end;

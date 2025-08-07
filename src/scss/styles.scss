@@ -48,7 +48,8 @@
 
     // Variables
     $enable-rounded: vars.$enable-rounded,
-    $enable-dark-mode: vars.$enable-dark-mode
+    $enable-dark-mode: vars.$enable-dark-mode,
+    $min-contrast-ratio: vars.$min-contrast-ratio,
 );
 
 // Import Components
