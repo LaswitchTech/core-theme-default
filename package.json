@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "<p align=\"center\"><img src=\"picture.png\" /></p>",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "prebuild:css": "node scripts/build-index.js",
         "build:css": "sass --quiet-deps --load-path=node_modules src/scss/styles.scss styles.css --no-source-map --style=compressed",

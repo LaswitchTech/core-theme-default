@@ -1,0 +1,36 @@
+// src/scss/utilities/_animations.scss
+@use "sass:map";
+@use "sass:math";
+@use "../colors" as colors;
+@use "bootstrap/scss/bootstrap" as bs;
+
+.app {
+    .app-main {
+        .content {
+            .app-content {
+                .app-503 {
+                    padding: 2rem;
+                    min-height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.3s ease;
+
+                    // Add transition to all elements inside
+                    * {
+                        transition: all 0.3s ease;
+                    }
+
+                    // Remove link underlines
+                    a {
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
