@@ -1,0 +1,83 @@
+// src/scss/templates/_widgets.scss
+@use "sass:map";
+@use "sass:math";
+@use "../colors" as colors;
+@use "bootstrap/scss/bootstrap" as bs;
+
+.widgets {
+    .dropdown {
+        .dropdown-menu {
+            min-width:400px;
+            max-width:500px;
+            background-color: var(--bs-gray-200) !important;
+            color: bs.color-contrast(colors.$gray-200) !important;
+            overflow: visible;
+
+            > * {
+                position: relative;
+                transition: 0.3s ease;
+
+                .dropdown-divider {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    padding: var(--bs-spacer-1);
+                    border-top: var(--bs-border-width) solid var(--bs-border-color);
+                    border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+                }
+
+                > * {
+                    transition: 0.3s ease;
+                }
+
+                &:has(.border) {
+                    .border {
+                        transition: 0.3s ease;
+                    }
+                    &:hover,
+                    &:focus {
+                        .border {
+                            --bs-border-color: var(--bs-primary);
+                            box-shadow: 0 0 0 var(--bs-spacer-1) rgba(var(--bs-primary-rgb),.25);
+                        }
+                    }
+                }
+            }
+
+            > li {
+                background-color: var(--bs-body-bg);
+
+                &:first-of-type {
+                    border-top: var(--bs-border-width) solid var(--bs-border-color);
+                }
+
+                &:last-of-type {
+                    border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+                }
+
+                &:hover,
+                &:focus {
+                    &:not(*:has(.dropdown-divider)){
+                        z-index: 2;
+
+                        > * {
+                            background-color: var(--bs-light);
+                            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+                            transform: translateX(-4px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Dark mode adjustments
+@include bs.color-mode(dark) {
+    .widgets {
+        .dropdown {
+            .dropdown-menu {
+                color: bs.color-contrast(colors.$gray-200);
+            }
+        }
+    }
+}
