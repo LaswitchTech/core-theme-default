@@ -14,5 +14,6 @@ function buildIndex(dir) {
 buildIndex('src/scss/components');
 buildIndex('src/scss/utilities');
 buildIndex('src/scss/forms');
+buildIndex('src/scss/templates');
 buildIndex('src/scss/views');
 console.log('Indexes rebuilt!');
