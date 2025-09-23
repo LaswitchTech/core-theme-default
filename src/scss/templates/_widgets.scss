@@ -4,6 +4,11 @@
 @use "../colors" as colors;
 @use "bootstrap/scss/bootstrap" as bs;
 
+:root {
+    --widgets-mobile-top-offset: 65px;
+    --navbar-height: calc(var(--widgets-mobile-top-offset) - 16px);
+}
+
 .widgets {
     .dropdown {
         .dropdown-menu {
@@ -63,6 +68,53 @@
                             background-color: var(--bs-light);
                             box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
                             transform: translateX(-4px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile adjustments
+@include bs.media-breakpoint-down(md) {
+    .widgets {
+        min-height: var(--navbar-height);
+
+        &:has(#searchField:not(.d-none)) {
+            > *:not(#searchField):not(#searchBtn) {
+                display:none !important;
+            }
+        }
+
+        .dropdown {
+            overflow: visible;
+
+            .dropdown-menu {
+                position: fixed !important;
+                top: var(--widgets-mobile-top-offset) !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                width: 100dvw !important;
+                min-width: 100dvw !important;
+                max-width: 100dvw !important;
+                max-height: calc(100dvh - var(--widgets-mobile-top-offset)) !important;
+                overflow-y: auto;
+                border-radius: 0;
+                margin: 0 !important;
+                right: auto !important;
+                background-color: var(--bs-body-bg);
+                color: bs.color-contrast(colors.$body-bg);
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
+                > li {
+                    &:hover,
+                    &:focus {
+                        &:not(*:has(.dropdown-divider)) {
+                            > * {
+                                transform: none;
+                                box-shadow: none;
+                            }
                         }
                     }
                 }
