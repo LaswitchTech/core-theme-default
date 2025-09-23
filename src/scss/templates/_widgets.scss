@@ -12,8 +12,9 @@
 .widgets {
     .dropdown {
         .dropdown-menu {
-            min-width:400px;
-            max-width:500px;
+            min-width: 400px;
+            max-width: 500px;
+            max-height: calc(100dvh - var(--widgets-mobile-top-offset));
             background-color: var(--bs-gray-200) !important;
             color: bs.color-contrast(colors.$gray-200) !important;
             overflow: visible;
@@ -91,8 +92,8 @@
             overflow: visible;
 
             .dropdown-menu {
-                position: fixed !important;
-                top: var(--widgets-mobile-top-offset) !important;
+                position: fixed;
+                top: var(--widgets-mobile-top-offset);
                 left: 50% !important;
                 transform: translateX(-50%) !important;
                 width: 100dvw !important;
@@ -108,6 +109,13 @@
                 box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 
                 > li {
+                    // position: relative;
+
+                    .dropdown-menu {
+                        position: fixed;
+                        top: 0;
+                    }
+
                     &:hover,
                     &:focus {
                         &:not(*:has(.dropdown-divider)) {
