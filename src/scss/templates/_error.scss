@@ -1,4 +1,4 @@
-// src/scss/views/_503.scss
+// src/scss/views/_error.scss
 @use "sass:map";
 @use "sass:math";
 @use "../colors" as colors;
@@ -8,7 +8,7 @@
     .app-main {
         .content {
             .app-content {
-                .app-503 {
+                .app-error {
                     padding: 2rem;
                     min-height: 100vh;
                     display: flex;
@@ -44,7 +44,7 @@
         .app-main {
             .content {
                 .app-content {
-                    .app-503 {
+                    .app-error {
                         padding: 0;
 
                         .container {

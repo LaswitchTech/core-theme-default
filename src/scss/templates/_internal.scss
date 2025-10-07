@@ -1,4 +1,4 @@
-// src/scss/views/_430.scss
+// src/scss/views/_internal.scss
 @use "sass:map";
 @use "sass:math";
 @use "../colors" as colors;
@@ -8,7 +8,7 @@
     .app-main {
         .content {
             .app-content {
-                .app-430 {
+                .app-internal {
                     padding: 2rem;
                     min-height: 100vh;
                     display: flex;
@@ -51,7 +51,7 @@
         .app-main {
             .content {
                 .app-content {
-                    .app-430 {
+                    .app-internal {
                         padding: 0;
 
                         .container {
