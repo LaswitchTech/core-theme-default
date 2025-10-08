@@ -5,6 +5,8 @@
 @use "bootstrap/scss/bootstrap" as bs;
 
 .app {
+    background-color: var(--bs-tertiary-bg);
+
     .app-main {
         .content {
             .app-content {
