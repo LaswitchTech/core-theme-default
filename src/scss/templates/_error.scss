@@ -28,15 +28,35 @@
                     }
 
                     // Remove link underlines
-                    a {
+                    a,
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         text-decoration: none;
 
                         &:hover {
-                            text-decoration: underline;
+                            text-decoration: none;
                         }
                     }
                 }
             }
+        }
+    }
+}
+
+.card.shadow.error {
+    max-width: 760px;
+
+    a,
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 }
